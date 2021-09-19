@@ -1,15 +1,13 @@
 import React from "react";
 import CustomButton from "../custom-button/custom-button.component";
-import { useSelector } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
-import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 
 import "./collection-item.styles.scss";
 
 const CollectionItem = ({ id, name, price, imageUrl }) => {
   const dispatch = useDispatch();
- 
+
   return (
     <div className="collection-item">
       <div

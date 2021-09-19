@@ -11,17 +11,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentUser } from './redux/user/user.actions'
 import { connect } from 'react-redux'
 import SignUp from './components/sign-up/sign-up.component';
+import CheckoutPage from './pages/checkout/checkout.component';
 
 function App({ setCurrentUser }) {
   const [currentUser, setCurrentUser1] = useState(null);
   const user = useSelector((state) => state.user.currentUser);
-  console.log(user)
-  // const dispatch = useDispatch()
 
-  // setCurrentUser(dispatch(setCurrentUser(user)))
-
-
-
+  console.log(currentUser)
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -43,6 +39,8 @@ function App({ setCurrentUser }) {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
+        <Route path="/checkout" component={CheckoutPage} />
+
         <Route exact path="/signin"
           render={() => currentUser ? (<Redirect to='/' />) :
             (<SignInAndSignOpPage />)}

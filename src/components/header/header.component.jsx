@@ -10,8 +10,6 @@ import "./header.styles.scss";
 const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
   const { hidden } = useSelector((state) => state.cart);
-  console.log(hidden);
-
   return (
     <div className="header">
       <Link className="logo-container" to="/">
