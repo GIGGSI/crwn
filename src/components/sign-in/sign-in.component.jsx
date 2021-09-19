@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import CustomButton from "../custom-button/custom-button.component";
 import FormInput from "../form-input/form-input.component";
+import { useHistory } from "react-router-dom";
+
 import "./sign-in.styles.scss";
 
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
@@ -8,6 +10,7 @@ import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +49,11 @@ const SignIn = () => {
         />
         <div className="buttons">
           <CustomButton type="submit">Sign in </CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+          <CustomButton
+            onClick={signInWithGoogle}
+            isGoogleSignIn
+          
+          >
             Sign in with google{" "}
           </CustomButton>
         </div>
