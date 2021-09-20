@@ -1,4 +1,3 @@
-/* Used as starting data for ShopPage */
 
 const shopData = [
     {
